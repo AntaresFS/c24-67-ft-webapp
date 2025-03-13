@@ -1,0 +1,32 @@
+{
+  "name": "Backend Dev Container",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "backend",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"version": "lts"
+		}
+	},
+  "forwardPorts": [3000, 5432],
+  "onCreateCommand": "(cp .env.example .env || echo \".env creation failed\");",
+  "postCreateCommand": "npm install && cd server && npm install",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "node.version": "20"
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
