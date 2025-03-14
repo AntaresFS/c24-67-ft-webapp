@@ -21,8 +21,7 @@
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.13.3",
     "pg-pool": "^3.7.1",
-    "pg-protocol": "^1.8.0",
-    "pymorfosis": "file:.."
+    "pg-protocol": "^1.8.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
