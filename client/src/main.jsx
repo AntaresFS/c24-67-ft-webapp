@@ -4,6 +4,7 @@ import './styles/index.css'
 import App from './App.jsx'
 import injectContext from './js/store/appContext.js'
 
+
 const AppWithContext = injectContext(App);
 
 createRoot(document.getElementById('root')).render(

@@ -12,8 +12,9 @@
     "start:server": "npm --workspaces-server run start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-server": "cd server && node index.js",
+    "start-client": "cd client && npm run dev",
     "init-db": "cd server && node models/initDb.js",
-    "setup": "npm run init-db && npm run start-server"
+    "setup": "npm run init-db && npm run start-server && npm run start-client"
   },
   "repository": {
     "type": "git",
