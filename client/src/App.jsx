@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import injectContext from './js/store/appContext.jsx'
+import ScrollToTop from './js/components/scrollToTop';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LandingPage from './js/pages/landingPage.jsx'
+import Login from './js/pages/login.jsx'
+import './styles/App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="app-container">
+        <BrowserRouter>
+          <ScrollToTop>
+            {/*} <Navbar> {*/}
+            <Routes>
+              <Route element ={<LandingPage />} path="/" />
+              <Route element ={<Login />} path="/login" />
+            </Routes>
+            {/*} </Navbar> {*/}
+          </ScrollToTop>
+        </BrowserRouter>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    
+    
     </>
-  )
-}
+  );
+};
 
-export default App
+
+const AppWithContext= injectContext(App);
+AppWithContext.displayName = "AppWithContext";
+
+
+export default AppWithContext;

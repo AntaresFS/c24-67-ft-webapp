@@ -2,12 +2,19 @@
   "name": "pymorfosis",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
-    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "start:client": "npm --workspaces-client run start",
+    "start:server": "npm --workspaces-server run start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-server": "cd server && node index.js",
+    "start": "cd client && npm run dev",
     "init-db": "cd server && node models/initDb.js",
-    "setup": "npm run init-db && npm run start-server"
+    "setup": "npm run init-db && npm run start-server && npm run start-client"
   },
   "repository": {
     "type": "git",
@@ -25,9 +32,10 @@
     "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "pg": "^8.7.1",
-    "pg-protocol": "^1.8.0",
+    "axios": "^1.8.3",
     "docker": "^1.0.0",
-    "docker-compose": "^1.1.1"
+    "docker-compose": "^1.1.1",
+    "pg": "^8.7.1",
+    "pg-protocol": "^1.8.0"
   }
 }

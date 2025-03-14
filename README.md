@@ -10,8 +10,8 @@ Si usas Github Codespaces o Gitpod este template ya viene con React, Node y la b
 
 Se recomienda instalar primero el backend. Asegúrate de tener Node.js y un motor de base de datos (se recomienda Postgres).
 
-1. Clona el repositorio: `$ git clone https://github.com/AntaresFS/PyMorfosis.git`
-2. Navega al directorio del proyecto: `$ cd PyMorfosis`
+1. Clona el repositorio: `$ git clone https://github.com/No-Country-simulation/c24-67-ft-webapp`
+2. Navega al directorio del proyecto: `$ cd c24-67-ft-webapp`
 3. Instala todas las dependencias: `$ npm run install-all`
 4. Crea un archivo .env basado en .env.example: `$ cp .env.example .env`
 5. Instala tu motor de base de datos y crea tu base de datos. Dependiendo de tu base de datos tendrás que crear una variable de entorno DATABASE_URL con uno de los siguientes valores. Asegúrate de cambiar los valores con la información de tu base de datos:
