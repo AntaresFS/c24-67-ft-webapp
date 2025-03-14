@@ -1,7 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
-import App from './App.jsx'
+import AppWithContext from './App.jsx'
 
 // Obtén el elemento donde se montará la aplicación
 const rootElement = document.querySelector("#root")
@@ -10,4 +10,4 @@ const rootElement = document.querySelector("#root")
 const root =createRoot(rootElement);
 
 // Renderiza la aplicación
-root.render(<App />)
+root.render(<AppWithContext />)
