@@ -1,12 +1,14 @@
+
+import React from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import injectContext from './js/store/appContext.jsx'
+import './styles/index.css'
+import AppWithContext from './App.jsx'
 
-const AppWithContext = injectContext(App);
+// Obtén el elemento donde se montará la aplicación
+const rootElement = document.querySelector("#root")
 
-createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
+// Usa createRoot para inicializar el renderizado
+const root =createRoot(rootElement);
+
+// Renderiza la aplicación
+root.render(<AppWithContext />)
