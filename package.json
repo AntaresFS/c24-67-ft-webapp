@@ -10,7 +10,6 @@
   "scripts": {
     "start:client": "npm --workspaces-client run start",
     "start:server": "npm --workspaces-server run start",
-    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-server": "cd server && node index.js",
     "init-db": "cd server && node models/initDb.js",
