@@ -17,6 +17,8 @@ const App = () => {
             <Routes>
               <Route element ={<LandingPage />} path="/" />
               <Route element ={<Login />} path="/login" />
+              <Route element ={<Dashboard />} path="/Dashboard" />
+              <Route element ={<PageNotFound />} path="/Dashboard" />
             </Routes>
             {/*} </Navbar> {*/}
           </ScrollToTop>
