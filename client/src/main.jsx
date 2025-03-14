@@ -1,16 +1,13 @@
-import { StrictMode } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import App from './App.jsx'
-import injectContext from './js/store/appContext.js'
 
+// Obtén el elemento donde se montará la aplicación
+const rootElement = document.querySelector("#root")
 
-const AppWithContext = injectContext(App);
+// Usa createRoot para inicializar el renderizado
+const root =createRoot(rootElement);
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
-)
+// Renderiza la aplicación
+root.render(<App />)
